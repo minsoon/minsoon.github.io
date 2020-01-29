@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>VuetifyJs on McFrontDeveloper</title>
-    <link>https://mcsung.github.io/tags/vuetifyjs/</link>
+    <link>https://minsoon.github.io/tags/vuetifyjs/</link>
     <description>Recent content in VuetifyJs on McFrontDeveloper</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>kr</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Wed, 29 Jan 2020 17:55:09 +0900</lastBuildDate>
     
-	<atom:link href="https://mcsung.github.io/tags/vuetifyjs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://minsoon.github.io/tags/vuetifyjs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Bug Report]</title>
-      <link>https://mcsung.github.io/2020/01/bugreport/</link>
+      <link>https://minsoon.github.io/2020/01/bugreport/</link>
       <pubDate>Wed, 29 Jan 2020 17:55:09 +0900</pubDate>
       
-      <guid>https://mcsung.github.io/2020/01/bugreport/</guid>
+      <guid>https://minsoon.github.io/2020/01/bugreport/</guid>
       <description>&lt;h3 id=&#34;features&#34;&gt;Features&lt;/h3&gt;
 &lt;h4 id=&#34;performance-and-seo&#34;&gt;Performance and SEO&lt;/h4&gt;
 &lt;ul&gt;
@@ -71,19 +71,19 @@
     
     <item>
       <title>[bug] Bug Vuetify</title>
-      <link>https://mcsung.github.io/2020/01/bug-vuetify/</link>
+      <link>https://minsoon.github.io/2020/01/bug-vuetify/</link>
       <pubDate>Wed, 29 Jan 2020 17:55:09 +0900</pubDate>
       
-      <guid>https://mcsung.github.io/2020/01/bug-vuetify/</guid>
+      <guid>https://minsoon.github.io/2020/01/bug-vuetify/</guid>
       <description>버그가있다.</description>
     </item>
     
     <item>
       <title>2LoveIt Theme Preview and Documentation</title>
-      <link>https://mcsung.github.io/2020/01/my-first-post/</link>
+      <link>https://minsoon.github.io/2020/01/my-first-post/</link>
       <pubDate>Tue, 28 Jan 2020 15:26:18 +0900</pubDate>
       
-      <guid>https://mcsung.github.io/2020/01/my-first-post/</guid>
+      <guid>https://minsoon.github.io/2020/01/my-first-post/</guid>
       <description>&lt;h3 id=&#34;features&#34;&gt;Features&lt;/h3&gt;
 &lt;h4 id=&#34;performance-and-seo&#34;&gt;Performance and SEO&lt;/h4&gt;
 &lt;ul&gt;
@@ -137,10 +137,10 @@
     
     <item>
       <title>2LoveIt Theme Preview and Documentation</title>
-      <link>https://mcsung.github.io/2020/01/my-first-post_teste/</link>
+      <link>https://minsoon.github.io/2020/01/my-first-post_teste/</link>
       <pubDate>Tue, 28 Jan 2020 15:26:18 +0900</pubDate>
       
-      <guid>https://mcsung.github.io/2020/01/my-first-post_teste/</guid>
+      <guid>https://minsoon.github.io/2020/01/my-first-post_teste/</guid>
       <description>&lt;h3 id=&#34;features&#34;&gt;Features&lt;/h3&gt;
 &lt;h4 id=&#34;performance-and-seo&#34;&gt;Performance and SEO&lt;/h4&gt;
 &lt;ul&gt;
