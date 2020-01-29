@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>McDeveloper on McDeveloper</title>
+        <title>McFrontDeveloper on McFrontDeveloper</title>
         <link>https://mcsung.github.io/</link>
-        <description>Recent content in McDeveloper on McDeveloper</description>
+        <description>Recent content in McFrontDeveloper on McFrontDeveloper</description>
         <generator>Hugo -- gohugo.io</generator>
         
             <language>kr</language>
@@ -12,14 +12,14 @@
             <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
         
         
-            <lastBuildDate>Tue, 28 Jan 2020 15:26:18 +0900</lastBuildDate>
+            <lastBuildDate>Wed, 29 Jan 2020 17:55:09 +0900</lastBuildDate>
         
         <atom:link href="https://mcsung.github.io/" rel="self" type="application/rss+xml" />
         
             <item>
                 <title>Posts</title>
                 <link>https://mcsung.github.io/posts/</link>
-                <pubDate>Tue, 28 Jan 2020 15:26:18 +0900</pubDate>
+                <pubDate>Wed, 29 Jan 2020 17:55:09 +0900</pubDate>
                 
                 <guid>https://mcsung.github.io/posts/</guid>
                 <description></description>
