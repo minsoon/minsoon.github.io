@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Update Vuetify 1.5 -&gt; 2.x | McFrontDeveloper</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="McFrontDeveloper">
+<link rel="canonical" href="https://minsoon.github.io/2020/01/vuetify2.x/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Update Vuetify 1.5 -&gt; 2.x"/>
+<meta name="twitter:description" content="Vue 프로젝트를 진행하면서 vuetify 1.x에 대한 버그(v-ripple: 모바일에서 중복으로 터짐)가
+발견되면서 패키지 자체를 수정해서 쓰다가 이제서야 오려봅니다.
+나는 Less를 사용중인데 이번에 vuetify 2.x는 sass를 사용하더라&hellip;
+충돌이 날까 걱정했지만 다행히 그런 문제는 없었다.
+일단 vuetify 버전을 올리고 sass 및 loader를 설치해준다.
+1 2  $ npm install vuetify@2.2.8 $ npm install sass sass-loader fibers deepmerge -D   그리고 webpack.conf에서 loader를 설정해 주는데 sass-loader 버전에 따라 다르다.
+안그러면 이렇게&hellip;..
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  // webpack."/>
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Update Vuetify 1.5 -\x3e 2.x",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/minsoon.github.io\/2020\/01\/vuetify2.x\/"
+    },
+    
+        "image": {
+            "@type": "ImageObject",
+            "url": "https:\/\/minsoon.github.io\/cover.png",
+            "width":  800 ,
+            "height":  600 
+        },
+    
+    "genre": "posts",
+    
+        "keywords": "Vue, VuetifyJs",
+    
+    "wordcount":  230 ,
+    "url": "https:\/\/minsoon.github.io\/2020\/01\/vuetify2.x\/",
+    
+        "datePublished": "2020-01-31T13:23:41\x2b09:00",
+    
+    
+        "dateModified": "2020-01-31T13:23:41\x2b09:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "XXXX",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/minsoon.github.io\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            window.isDark = true;
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://minsoon.github.io/">McFrontDeveloper</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://minsoon.github.io/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://minsoon.github.io/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://minsoon.github.io/categories" title="">Categories</a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://minsoon.github.io/">McFrontDeveloper</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://minsoon.github.io/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://minsoon.github.io/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://minsoon.github.io/categories" title="">Categories</a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Update Vuetify 1.5 -&gt; 2.x</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://minsoon.github.io/" rel="author"><i class="fas fa-user-circle fa-fw"></i>mcsung&nbsp;</a>
+                <span class="post-category">
+                        
+                        <i class="far fa-folder fa-fw"></i><a href="https://minsoon.github.io/categories/javascript/">Javascript</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-01-31>2020-01-31</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                <h2 class="post-toc-title"></h2>
+                <div class="post-toc-content">
+                    <nav id="TableOfContents"></nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span></span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile"></nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <p>Vue 프로젝트를 진행하면서 vuetify 1.x에 대한 버그(v-ripple: 모바일에서 중복으로 터짐)가</p>
+<p>발견되면서 패키지 자체를 수정해서 쓰다가 이제서야 오려봅니다.</p>
+<p>나는 Less를 사용중인데 이번에 vuetify 2.x는 sass를 사용하더라&hellip;</p>
+<p>충돌이 날까 걱정했지만 다행히 그런 문제는 없었다.</p>
+<p>일단 vuetify 버전을 올리고 sass 및 loader를 설치해준다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ npm install vuetify@2.2.8
+$ npm install sass sass-loader fibers deepmerge -D
+</code></pre></td></tr></table>
+</div>
+</div><p>그리고 webpack.conf에서 loader를 설정해 주는데 sass-loader 버전에 따라 다르다.</p>
+<p><img src="/images/error.png" alt="Local Picture" title="Local Picture"></p>
+<p>안그러면 이렇게&hellip;..</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// webpack.config.js
+</span><span class="c1"></span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">rules</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nx">test</span><span class="o">:</span> <span class="sr">/\.s(c|a)ss$/</span><span class="p">,</span>
+      <span class="nx">use</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s1">&#39;vue-style-loader&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;css-loader&#39;</span><span class="p">,</span>
+        <span class="p">{</span>
+          <span class="nx">loader</span><span class="o">:</span> <span class="s1">&#39;sass-loader&#39;</span><span class="p">,</span>
+          <span class="c1">// Requires sass-loader@^7.0.0
+</span><span class="c1"></span>          <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">implementation</span><span class="o">:</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;sass&#39;</span><span class="p">)</span><span class="p">,</span>
+            <span class="nx">fiber</span><span class="o">:</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fibers&#39;</span><span class="p">)</span><span class="p">,</span>
+            <span class="nx">indentedSyntax</span><span class="o">:</span> <span class="kc">true</span> <span class="c1">// optional
+</span><span class="c1"></span>          <span class="p">}</span><span class="p">,</span>
+          <span class="c1">// Requires sass-loader@^8.0.0
+</span><span class="c1"></span>          <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">implementation</span><span class="o">:</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;sass&#39;</span><span class="p">)</span><span class="p">,</span>
+            <span class="nx">sassOptions</span><span class="o">:</span> <span class="p">{</span>
+              <span class="nx">fiber</span><span class="o">:</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fibers&#39;</span><span class="p">)</span><span class="p">,</span>
+              <span class="nx">indentedSyntax</span><span class="o">:</span> <span class="kc">true</span> <span class="c1">// optional
+</span><span class="c1"></span>            <span class="p">}</span><span class="p">,</span>
+          <span class="p">}</span><span class="p">,</span>
+        <span class="p">}</span><span class="p">,</span>
+      <span class="p">]</span><span class="p">,</span>
+    <span class="p">}</span><span class="p">,</span>
+  <span class="p">]</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>다음 1.x대 와 다르게 vuetify 플러그인을 따로 빼주게 되어있다.</p>
+<p>아래처럼 코드를 변경해주면된다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// src/plugins/vuetify.js
+</span><span class="c1"></span>
+<span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
+<span class="kr">import</span> <span class="nx">Vuetify</span> <span class="nx">from</span> <span class="s1">&#39;vuetify&#39;</span>
+<span class="kr">import</span> <span class="s1">&#39;vuetify/dist/vuetify.min.css&#39;</span>
+
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuetify</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">opts</span> <span class="o">=</span> <span class="p">{</span><span class="p">}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="k">new</span> <span class="nx">Vuetify</span><span class="p">(</span><span class="nx">opts</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// src/main.js
+</span><span class="c1"></span>
+<span class="k">new</span> <span class="nx">Vue</span><span class="p">(</span><span class="p">{</span>
+  <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
+  <span class="nx">vuetify</span><span class="p">,</span>
+  <span class="nx">router</span><span class="p">,</span>
+  <span class="nx">components</span><span class="o">:</span> <span class="p">{</span> <span class="nx">App</span> <span class="p">}</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;&lt;App/&gt;&#39;</span>
+<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>이제 빌드해서 확인해보니 정상 동작을 한다.</p>
+<p>근데 화면이 너무 깨지는 바람에 다시 버전을 내려놨다..어쩔수없지..</p>
+
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>%!(EXTRA string=2020-01-31)</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fminsoon.github.io%2f2020%2f01%2fvuetify2.x%2f&amp;text=Update%20Vuetify%201.5%20-%3e%202.x&amp;via=" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fminsoon.github.io%2f2020%2f01%2fvuetify2.x%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+        <a href="//reddit.com/submit?url=https%3a%2f%2fminsoon.github.io%2f2020%2f01%2fvuetify2.x%2f&amp;title=Update%20Vuetify%201.5%20-%3e%202.x" target="_blank" title="Share on Reddit">
+            <i class="fab fa-reddit fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://minsoon.github.io/tags/vue/"><i class="fas fa-tag fa-fw"></i>Vue</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://minsoon.github.io/tags/vuetifyjs/"><i class="fas fa-tag fa-fw"></i>VuetifyJs</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();"></a></span>&nbsp;|&nbsp;<span><a href="https://minsoon.github.io/"></a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            
+
+            
+        </div>
+    </article></div>
+            </main>
+            
+            
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>

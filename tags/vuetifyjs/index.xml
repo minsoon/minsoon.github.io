@@ -7,189 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>kr</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 29 Jan 2020 17:55:09 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jan 2020 13:23:41 +0900</lastBuildDate>
     
 	<atom:link href="https://minsoon.github.io/tags/vuetifyjs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>[Bug Report]</title>
-      <link>https://minsoon.github.io/2020/01/bugreport/</link>
-      <pubDate>Wed, 29 Jan 2020 17:55:09 +0900</pubDate>
+      <title>Update Vuetify 1.5 -&gt; 2.x</title>
+      <link>https://minsoon.github.io/2020/01/vuetify2.x/</link>
+      <pubDate>Fri, 31 Jan 2020 13:23:41 +0900</pubDate>
       
-      <guid>https://minsoon.github.io/2020/01/bugreport/</guid>
-      <description>&lt;h3 id=&#34;features&#34;&gt;Features&lt;/h3&gt;
-&lt;h4 id=&#34;performance-and-seo&#34;&gt;Performance and SEO&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;:(fas fa-rocket): Optimized for performance: 99/100 on mobile and 100/100 on desktop in &lt;a href=&#34;https://developers.google.com/speed/pagespeed/insights&#34;&gt;Google PageSpeed Insights&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fab fa-searchengin): Optimized SEO performance with a correct SEO SCHEMA based on JSON-LD&lt;/li&gt;
-&lt;li&gt;:(fab fa-google): &lt;a href=&#34;https://analytics.google.com/analytics&#34;&gt;Google Analytics&lt;/a&gt; support&lt;/li&gt;
-&lt;li&gt;:(fas fa-search): Search engine verification support (Google, Bind, Yandex and Baidu)&lt;/li&gt;
-&lt;li&gt;:(fas fa-tachometer-alt): CDN for all third-party libraries support&lt;/li&gt;
-&lt;li&gt;:(far fa-images): Automatically converted images with Lazy Load by &lt;a href=&#34;https://github.com/aFarkas/lazysizes&#34;&gt;lazysizes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;appearance-and-layout&#34;&gt;Appearance and Layout&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;:(fas fa-desktop): / :(fas fa-mobile): Responsive layout&lt;/li&gt;
-&lt;li&gt;:(fas fa-moon): / :(fas fa-sun): Mode&lt;/li&gt;
-&lt;li&gt;:(fas fa-layer-group): A More coerent style beetwen page and sections&lt;/li&gt;
-&lt;li&gt;:(fas fa-ellipsis-h): Pagination support&lt;/li&gt;
-&lt;li&gt;:(far fa-list-alt): Easy-to-use and self-expanding article catalog, while adapting to the mobile side&lt;/li&gt;
-&lt;li&gt;:(fas fa-language): Multilanguage support and I18N ready&lt;/li&gt;
-&lt;li&gt;:(fab fa-css3-alt): Beautiful CSS animation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;social-and-comment-systems&#34;&gt;Social and Comment Systems&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;:(far fa-user): Gravatar support by &lt;a href=&#34;https://gravatar.com&#34;&gt;Gravatar&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fas fa-user-circle): Local Avatar support&lt;/li&gt;
-&lt;li&gt;:(far fa-id-card): Up to 54 social sites supported&lt;/li&gt;
-&lt;li&gt;:(fas fa-share-square): Share post support&lt;/li&gt;
-&lt;li&gt;:(far fa-comment): Disqus comment system support by &lt;a href=&#34;https://disqus.com&#34;&gt;Disqus&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(far fa-comment-dots): Gitalk comment system support by &lt;a href=&#34;https://github.com/gitalk/gitalk&#34;&gt;Gitalk&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(far fa-comment-alt): Valine comment system support by &lt;a href=&#34;https://valine.js.org/&#34;&gt;Valine&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;extended-features&#34;&gt;Extended Features&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;:(fas fa-code): Automatically highlighting code by chroma in Hugo&lt;/li&gt;
-&lt;li&gt;:(fab fa-font-awesome): Extended markdown syntax for &lt;a href=&#34;https://fontawesome.com/&#34;&gt;Font Awesome&lt;/a&gt; icons&lt;/li&gt;
-&lt;li&gt;:(fas fa-square-root-alt): Math formula support by &lt;a href=&#34;https://katex.org/&#34;&gt;Katex&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fas fa-project-diagram): Diagram syntax shortcode support by &lt;a href=&#34;https://github.com/knsv/mermaid&#34;&gt;mermaid&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fas fa-music): Embedded music player support by &lt;a href=&#34;https://github.com/MoePlayer/APlayer&#34;&gt;APlayer&lt;/a&gt; and &lt;a href=&#34;https://github.com/metowolf/MetingJS&#34;&gt;MetingJS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fas fa-tv): Bilibili player support&lt;/li&gt;
-&lt;li&gt;:(far fa-bell): Kinds of admonitions shortcode support&lt;/li&gt;
-&lt;li&gt;:(fas fa-align-left): Custom align and float style shortcodes support&lt;/li&gt;
-&lt;li&gt;:(fas fa-i-cursor): Animated typing support by &lt;a href=&#34;https://typeitjs.com/&#34;&gt;TypeIt&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(far fa-clock): Animated coutdown support by &lt;a href=&#34;https://github.com/hilios/jQuery.countdown&#34;&gt;jQuery.countdown&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fas fa-arrow-up): Dynamic to top support by &lt;a href=&#34;https://github.com/cferdinandi/smooth-scroll&#34;&gt;Smooth Scroll&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;license&#34;&gt;License&lt;/h3&gt;
-&lt;p&gt;LoveIt is licensed under the MIT license.&lt;/p&gt;
-&lt;p&gt;Check the &lt;a href=&#34;https://github.com/dillonzq/LoveIt/blob/master/LICENSE&#34;&gt;LICENSE file&lt;/a&gt; for details.&lt;/p&gt;
-&lt;p&gt;Thanks to the authors of following resources included in the theme:&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>[bug] Bug Vuetify</title>
-      <link>https://minsoon.github.io/2020/01/bug-vuetify/</link>
-      <pubDate>Wed, 29 Jan 2020 17:55:09 +0900</pubDate>
-      
-      <guid>https://minsoon.github.io/2020/01/bug-vuetify/</guid>
-      <description>버그가있다.</description>
-    </item>
-    
-    <item>
-      <title>2LoveIt Theme Preview and Documentation</title>
-      <link>https://minsoon.github.io/2020/01/my-first-post/</link>
-      <pubDate>Tue, 28 Jan 2020 15:26:18 +0900</pubDate>
-      
-      <guid>https://minsoon.github.io/2020/01/my-first-post/</guid>
-      <description>&lt;h3 id=&#34;features&#34;&gt;Features&lt;/h3&gt;
-&lt;h4 id=&#34;performance-and-seo&#34;&gt;Performance and SEO&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;:(fas fa-rocket): Optimized for performance: 99/100 on mobile and 100/100 on desktop in &lt;a href=&#34;https://developers.google.com/speed/pagespeed/insights&#34;&gt;Google PageSpeed Insights&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fab fa-searchengin): Optimized SEO performance with a correct SEO SCHEMA based on JSON-LD&lt;/li&gt;
-&lt;li&gt;:(fab fa-google): &lt;a href=&#34;https://analytics.google.com/analytics&#34;&gt;Google Analytics&lt;/a&gt; support&lt;/li&gt;
-&lt;li&gt;:(fas fa-search): Search engine verification support (Google, Bind, Yandex and Baidu)&lt;/li&gt;
-&lt;li&gt;:(fas fa-tachometer-alt): CDN for all third-party libraries support&lt;/li&gt;
-&lt;li&gt;:(far fa-images): Automatically converted images with Lazy Load by &lt;a href=&#34;https://github.com/aFarkas/lazysizes&#34;&gt;lazysizes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;appearance-and-layout&#34;&gt;Appearance and Layout&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;:(fas fa-desktop): / :(fas fa-mobile): Responsive layout&lt;/li&gt;
-&lt;li&gt;:(fas fa-moon): / :(fas fa-sun): Mode&lt;/li&gt;
-&lt;li&gt;:(fas fa-layer-group): A More coerent style beetwen page and sections&lt;/li&gt;
-&lt;li&gt;:(fas fa-ellipsis-h): Pagination support&lt;/li&gt;
-&lt;li&gt;:(far fa-list-alt): Easy-to-use and self-expanding article catalog, while adapting to the mobile side&lt;/li&gt;
-&lt;li&gt;:(fas fa-language): Multilanguage support and I18N ready&lt;/li&gt;
-&lt;li&gt;:(fab fa-css3-alt): Beautiful CSS animation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;social-and-comment-systems&#34;&gt;Social and Comment Systems&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;:(far fa-user): Gravatar support by &lt;a href=&#34;https://gravatar.com&#34;&gt;Gravatar&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fas fa-user-circle): Local Avatar support&lt;/li&gt;
-&lt;li&gt;:(far fa-id-card): Up to 54 social sites supported&lt;/li&gt;
-&lt;li&gt;:(fas fa-share-square): Share post support&lt;/li&gt;
-&lt;li&gt;:(far fa-comment): Disqus comment system support by &lt;a href=&#34;https://disqus.com&#34;&gt;Disqus&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(far fa-comment-dots): Gitalk comment system support by &lt;a href=&#34;https://github.com/gitalk/gitalk&#34;&gt;Gitalk&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(far fa-comment-alt): Valine comment system support by &lt;a href=&#34;https://valine.js.org/&#34;&gt;Valine&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;extended-features&#34;&gt;Extended Features&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;:(fas fa-code): Automatically highlighting code by chroma in Hugo&lt;/li&gt;
-&lt;li&gt;:(fab fa-font-awesome): Extended markdown syntax for &lt;a href=&#34;https://fontawesome.com/&#34;&gt;Font Awesome&lt;/a&gt; icons&lt;/li&gt;
-&lt;li&gt;:(fas fa-square-root-alt): Math formula support by &lt;a href=&#34;https://katex.org/&#34;&gt;Katex&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fas fa-project-diagram): Diagram syntax shortcode support by &lt;a href=&#34;https://github.com/knsv/mermaid&#34;&gt;mermaid&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fas fa-music): Embedded music player support by &lt;a href=&#34;https://github.com/MoePlayer/APlayer&#34;&gt;APlayer&lt;/a&gt; and &lt;a href=&#34;https://github.com/metowolf/MetingJS&#34;&gt;MetingJS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fas fa-tv): Bilibili player support&lt;/li&gt;
-&lt;li&gt;:(far fa-bell): Kinds of admonitions shortcode support&lt;/li&gt;
-&lt;li&gt;:(fas fa-align-left): Custom align and float style shortcodes support&lt;/li&gt;
-&lt;li&gt;:(fas fa-i-cursor): Animated typing support by &lt;a href=&#34;https://typeitjs.com/&#34;&gt;TypeIt&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(far fa-clock): Animated coutdown support by &lt;a href=&#34;https://github.com/hilios/jQuery.countdown&#34;&gt;jQuery.countdown&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fas fa-arrow-up): Dynamic to top support by &lt;a href=&#34;https://github.com/cferdinandi/smooth-scroll&#34;&gt;Smooth Scroll&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;license&#34;&gt;License&lt;/h3&gt;
-&lt;p&gt;LoveIt is licensed under the MIT license.&lt;/p&gt;
-&lt;p&gt;Check the &lt;a href=&#34;https://github.com/dillonzq/LoveIt/blob/master/LICENSE&#34;&gt;LICENSE file&lt;/a&gt; for details.&lt;/p&gt;
-&lt;p&gt;Thanks to the authors of following resources included in the theme:&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>2LoveIt Theme Preview and Documentation</title>
-      <link>https://minsoon.github.io/2020/01/my-first-post_teste/</link>
-      <pubDate>Tue, 28 Jan 2020 15:26:18 +0900</pubDate>
-      
-      <guid>https://minsoon.github.io/2020/01/my-first-post_teste/</guid>
-      <description>&lt;h3 id=&#34;features&#34;&gt;Features&lt;/h3&gt;
-&lt;h4 id=&#34;performance-and-seo&#34;&gt;Performance and SEO&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;:(fas fa-rocket): Optimized for performance: 99/100 on mobile and 100/100 on desktop in &lt;a href=&#34;https://developers.google.com/speed/pagespeed/insights&#34;&gt;Google PageSpeed Insights&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fab fa-searchengin): Optimized SEO performance with a correct SEO SCHEMA based on JSON-LD&lt;/li&gt;
-&lt;li&gt;:(fab fa-google): &lt;a href=&#34;https://analytics.google.com/analytics&#34;&gt;Google Analytics&lt;/a&gt; support&lt;/li&gt;
-&lt;li&gt;:(fas fa-search): Search engine verification support (Google, Bind, Yandex and Baidu)&lt;/li&gt;
-&lt;li&gt;:(fas fa-tachometer-alt): CDN for all third-party libraries support&lt;/li&gt;
-&lt;li&gt;:(far fa-images): Automatically converted images with Lazy Load by &lt;a href=&#34;https://github.com/aFarkas/lazysizes&#34;&gt;lazysizes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;appearance-and-layout&#34;&gt;Appearance and Layout&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;:(fas fa-desktop): / :(fas fa-mobile): Responsive layout&lt;/li&gt;
-&lt;li&gt;:(fas fa-moon): / :(fas fa-sun): Mode&lt;/li&gt;
-&lt;li&gt;:(fas fa-layer-group): A More coerent style beetwen page and sections&lt;/li&gt;
-&lt;li&gt;:(fas fa-ellipsis-h): Pagination support&lt;/li&gt;
-&lt;li&gt;:(far fa-list-alt): Easy-to-use and self-expanding article catalog, while adapting to the mobile side&lt;/li&gt;
-&lt;li&gt;:(fas fa-language): Multilanguage support and I18N ready&lt;/li&gt;
-&lt;li&gt;:(fab fa-css3-alt): Beautiful CSS animation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;social-and-comment-systems&#34;&gt;Social and Comment Systems&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;:(far fa-user): Gravatar support by &lt;a href=&#34;https://gravatar.com&#34;&gt;Gravatar&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fas fa-user-circle): Local Avatar support&lt;/li&gt;
-&lt;li&gt;:(far fa-id-card): Up to 54 social sites supported&lt;/li&gt;
-&lt;li&gt;:(fas fa-share-square): Share post support&lt;/li&gt;
-&lt;li&gt;:(far fa-comment): Disqus comment system support by &lt;a href=&#34;https://disqus.com&#34;&gt;Disqus&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(far fa-comment-dots): Gitalk comment system support by &lt;a href=&#34;https://github.com/gitalk/gitalk&#34;&gt;Gitalk&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(far fa-comment-alt): Valine comment system support by &lt;a href=&#34;https://valine.js.org/&#34;&gt;Valine&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;extended-features&#34;&gt;Extended Features&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;:(fas fa-code): Automatically highlighting code by chroma in Hugo&lt;/li&gt;
-&lt;li&gt;:(fab fa-font-awesome): Extended markdown syntax for &lt;a href=&#34;https://fontawesome.com/&#34;&gt;Font Awesome&lt;/a&gt; icons&lt;/li&gt;
-&lt;li&gt;:(fas fa-square-root-alt): Math formula support by &lt;a href=&#34;https://katex.org/&#34;&gt;Katex&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fas fa-project-diagram): Diagram syntax shortcode support by &lt;a href=&#34;https://github.com/knsv/mermaid&#34;&gt;mermaid&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fas fa-music): Embedded music player support by &lt;a href=&#34;https://github.com/MoePlayer/APlayer&#34;&gt;APlayer&lt;/a&gt; and &lt;a href=&#34;https://github.com/metowolf/MetingJS&#34;&gt;MetingJS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fas fa-tv): Bilibili player support&lt;/li&gt;
-&lt;li&gt;:(far fa-bell): Kinds of admonitions shortcode support&lt;/li&gt;
-&lt;li&gt;:(fas fa-align-left): Custom align and float style shortcodes support&lt;/li&gt;
-&lt;li&gt;:(fas fa-i-cursor): Animated typing support by &lt;a href=&#34;https://typeitjs.com/&#34;&gt;TypeIt&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(far fa-clock): Animated coutdown support by &lt;a href=&#34;https://github.com/hilios/jQuery.countdown&#34;&gt;jQuery.countdown&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;:(fas fa-arrow-up): Dynamic to top support by &lt;a href=&#34;https://github.com/cferdinandi/smooth-scroll&#34;&gt;Smooth Scroll&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;license&#34;&gt;License&lt;/h3&gt;
-&lt;p&gt;LoveIt is licensed under the MIT license.&lt;/p&gt;
-&lt;p&gt;Check the &lt;a href=&#34;https://github.com/dillonzq/LoveIt/blob/master/LICENSE&#34;&gt;LICENSE file&lt;/a&gt; for details.&lt;/p&gt;
-&lt;p&gt;Thanks to the authors of following resources included in the theme:&lt;/p&gt;</description>
+      <guid>https://minsoon.github.io/2020/01/vuetify2.x/</guid>
+      <description>Vue 프로젝트를 진행하면서 vuetify 1.x에 대한 버그(v-ripple: 모바일에서 중복으로 터짐)가
+발견되면서 패키지 자체를 수정해서 쓰다가 이제서야 오려봅니다.
+나는 Less를 사용중인데 이번에 vuetify 2.x는 sass를 사용하더라&amp;hellip;
+충돌이 날까 걱정했지만 다행히 그런 문제는 없었다.
+일단 vuetify 버전을 올리고 sass 및 loader를 설치해준다.
+1 2  $ npm install vuetify@2.2.8 $ npm install sass sass-loader fibers deepmerge -D   그리고 webpack.conf에서 loader를 설정해 주는데 sass-loader 버전에 따라 다르다.
+안그러면 이렇게&amp;hellip;..
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  // webpack.</description>
     </item>
     
   </channel>
