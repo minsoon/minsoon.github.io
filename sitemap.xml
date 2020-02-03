@@ -1,9 +1,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
         <url>
+            <loc>https://minsoon.github.io/2020/02/vuetify-touch/</loc>
+            
+                <lastmod>2020-02-03T10:12:00+09:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
             <loc>https://minsoon.github.io/categories/</loc>
             
-                <lastmod>2020-01-31T13:23:41+09:00</lastmod>
+                <lastmod>2020-02-03T10:12:00+09:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -17,7 +31,7 @@
         <url>
             <loc>https://minsoon.github.io/categories/javascript/</loc>
             
-                <lastmod>2020-01-31T13:23:41+09:00</lastmod>
+                <lastmod>2020-02-03T10:12:00+09:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -31,7 +45,7 @@
         <url>
             <loc>https://minsoon.github.io/</loc>
             
-                <lastmod>2020-01-31T13:23:41+09:00</lastmod>
+                <lastmod>2020-02-03T10:12:00+09:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -45,7 +59,7 @@
         <url>
             <loc>https://minsoon.github.io/posts/</loc>
             
-                <lastmod>2020-01-31T13:23:41+09:00</lastmod>
+                <lastmod>2020-02-03T10:12:00+09:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -59,7 +73,7 @@
         <url>
             <loc>https://minsoon.github.io/tags/</loc>
             
-                <lastmod>2020-01-31T13:23:41+09:00</lastmod>
+                <lastmod>2020-02-03T10:12:00+09:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -71,9 +85,9 @@
         </url>
     
         <url>
-            <loc>https://minsoon.github.io/2020/01/vuetify2.x/</loc>
+            <loc>https://minsoon.github.io/tags/v-ripple/</loc>
             
-                <lastmod>2020-01-31T13:23:41+09:00</lastmod>
+                <lastmod>2020-02-03T10:12:00+09:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -87,7 +101,7 @@
         <url>
             <loc>https://minsoon.github.io/tags/vue/</loc>
             
-                <lastmod>2020-01-31T13:23:41+09:00</lastmod>
+                <lastmod>2020-02-03T10:12:00+09:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -100,6 +114,20 @@
     
         <url>
             <loc>https://minsoon.github.io/tags/vuetifyjs/</loc>
+            
+                <lastmod>2020-02-03T10:12:00+09:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://minsoon.github.io/2020/01/vuetify2.x/</loc>
             
                 <lastmod>2020-01-31T13:23:41+09:00</lastmod>
             

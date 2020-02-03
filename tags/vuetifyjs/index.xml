@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>kr</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 31 Jan 2020 13:23:41 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 03 Feb 2020 10:12:00 +0900</lastBuildDate>
     
 	<atom:link href="https://minsoon.github.io/tags/vuetifyjs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[BugReport] Vuetify v-ripple 중복 이슈</title>
+      <link>https://minsoon.github.io/2020/02/vuetify-touch/</link>
+      <pubDate>Mon, 03 Feb 2020 10:12:00 +0900</pubDate>
+      
+      <guid>https://minsoon.github.io/2020/02/vuetify-touch/</guid>
+      <description>vue 프로젝트를 진행하면서 언젠가 부터인지는 정확하지 않으나 touch 효과가 중복되어 터지는 에러를 발견하였다.
+이에따라 vuetify 이슈 사항에 등록되었어 업데이트가 어려운 사항에 따라 수정한 내역이다.
+나중에 vuetify를 다시 업데이트 할때 해결은 되겠지만 그전에 해결하기 위해서 수정한 내역이다.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  // node_modules/vuetify/src/globals.d.ts  interface HTMLElement { _clickOutside?: EventListenerOrEventListenerObject _onResize?</description>
+    </item>
     
     <item>
       <title>Update Vuetify 1.5 -&gt; 2.x</title>

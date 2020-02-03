@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>[BugReport] Vuetify v-ripple 중복 이슈 | McFrontDeveloper</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="McFrontDeveloper">
+<link rel="prev" href="https://minsoon.github.io/2020/01/vuetify2.x/" />
+<link rel="canonical" href="https://minsoon.github.io/2020/02/vuetify-touch/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[BugReport] Vuetify v-ripple 중복 이슈"/>
+<meta name="twitter:description" content="vue 프로젝트를 진행하면서 언젠가 부터인지는 정확하지 않으나 touch 효과가 중복되어 터지는 에러를 발견하였다.
+이에따라 vuetify 이슈 사항에 등록되었어 업데이트가 어려운 사항에 따라 수정한 내역이다.
+나중에 vuetify를 다시 업데이트 할때 해결은 되겠지만 그전에 해결하기 위해서 수정한 내역이다.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  // node_modules/vuetify/src/globals.d.ts  interface HTMLElement { _clickOutside?: EventListenerOrEventListenerObject _onResize?"/>
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "[BugReport] Vuetify v-ripple 중복 이슈",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/minsoon.github.io\/2020\/02\/vuetify-touch\/"
+    },
+    
+        "image": {
+            "@type": "ImageObject",
+            "url": "https:\/\/minsoon.github.io\/cover.png",
+            "width":  800 ,
+            "height":  600 
+        },
+    
+    "genre": "posts",
+    
+        "keywords": "Vue, VuetifyJs, v-ripple",
+    
+    "wordcount":  240 ,
+    "url": "https:\/\/minsoon.github.io\/2020\/02\/vuetify-touch\/",
+    
+        "datePublished": "2020-02-03T10:12:00\x2b09:00",
+    
+    
+        "dateModified": "2020-02-03T10:12:00\x2b09:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "XXXX",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/minsoon.github.io\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            window.isDark = true;
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://minsoon.github.io/">McFrontDeveloper</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://minsoon.github.io/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://minsoon.github.io/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://minsoon.github.io/categories" title="">Categories</a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://minsoon.github.io/">McFrontDeveloper</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://minsoon.github.io/posts" title="">Posts</a>
+            
+                <a class="menu-item" href="https://minsoon.github.io/tags" title="">Tags</a>
+            
+                <a class="menu-item" href="https://minsoon.github.io/categories" title="">Categories</a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">[BugReport] Vuetify v-ripple 중복 이슈</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://minsoon.github.io/" rel="author"><i class="fas fa-user-circle fa-fw"></i>mcsung&nbsp;</a>
+                <span class="post-category">
+                        
+                        <i class="far fa-folder fa-fw"></i><a href="https://minsoon.github.io/categories/javascript/">Javascript</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-02-03>2020-02-03</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                <h2 class="post-toc-title"></h2>
+                <div class="post-toc-content">
+                    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#참고-자료-">참고 자료</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span></span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#참고-자료-">참고 자료</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <p>vue 프로젝트를 진행하면서 언젠가 부터인지는 정확하지 않으나 touch 효과가 중복되어 터지는 에러를 발견하였다.</p>
+<p>이에따라 vuetify 이슈 사항에 등록되었어 업데이트가 어려운 사항에 따라 수정한 내역이다.</p>
+<p>나중에 vuetify를 다시 업데이트 할때 해결은 되겠지만 그전에 해결하기 위해서 수정한 내역이다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// node_modules/vuetify/src/globals.d.ts
+</span><span class="c1"></span>
+<span class="kr">interface</span> <span class="nx">HTMLElement</span> <span class="p">{</span>
+    <span class="nx">_clickOutside</span><span class="o">?</span><span class="o">:</span> <span class="nx">EventListenerOrEventListenerObject</span>
+    <span class="nx">_onResize</span><span class="o">?</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">callback</span><span class="o">:</span> <span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">void</span>
+      <span class="nx">options</span><span class="o">?</span><span class="o">:</span> <span class="kr">boolean</span> <span class="o">|</span> <span class="nx">AddEventListenerOptions</span>
+    <span class="p">}</span>
+    <span class="nx">_ripple</span><span class="o">?</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">enabled</span><span class="o">?</span><span class="o">:</span> <span class="kr">boolean</span>
+      <span class="nx">centered</span><span class="o">?</span><span class="o">:</span> <span class="kr">boolean</span>
+      <span class="kr">class</span><span class="o">?</span><span class="o">:</span> <span class="nx">string</span>
+      <span class="nx">circle</span><span class="o">?</span><span class="o">:</span> <span class="kr">boolean</span>
+      <span class="nx">touched</span><span class="o">?</span><span class="o">:</span> <span class="kr">boolean</span>
+      <span class="nx">isTouch</span><span class="o">?</span><span class="o">:</span> <span class="kr">boolean</span>  <span class="c1">// Add
+</span><span class="c1"></span>    <span class="p">}</span>
+    <span class="nx">_onScroll</span><span class="o">?</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">callback</span><span class="o">:</span> <span class="nx">EventListenerOrEventListenerObject</span>
+      <span class="nx">options</span><span class="o">:</span> <span class="kr">boolean</span> <span class="o">|</span> <span class="nx">AddEventListenerOptions</span>
+      <span class="nx">target</span><span class="o">:</span> <span class="nx">EventTarget</span>
+    <span class="p">}</span>
+    <span class="nx">_touchHandlers</span><span class="o">?</span><span class="o">:</span> <span class="p">{</span>
+      <span class="p">[</span><span class="nx">_uid</span><span class="o">:</span> <span class="nx">number</span><span class="p">]</span><span class="o">:</span> <span class="nx">TouchStoredHandlers</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// node_modules/vuetify/es5/directives/ripple.js
+</span><span class="c1"></span><span class="c1">// node_modules/vuetify/lib/directives/ripple.js
+</span><span class="c1"></span><span class="c1">// node_modules/vuetify/src/directives/ripple.ts
+</span><span class="c1"></span>
+
+<span class="kd">function</span> <span class="nx">rippleShow</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="p">{</span><span class="p">}</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">element</span> <span class="o">||</span> <span class="o">!</span><span class="nx">element</span><span class="p">.</span><span class="nx">_ripple</span> <span class="o">||</span> <span class="nx">element</span><span class="p">.</span><span class="nx">_ripple</span><span class="p">.</span><span class="nx">touched</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isTouchEvent</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">element</span><span class="p">.</span><span class="nx">_ripple</span><span class="p">.</span><span class="nx">touched</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="nx">element</span><span class="p">.</span><span class="nx">_ripple</span><span class="p">.</span><span class="nx">isTouch</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// Add
+</span><span class="c1"></span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">_ripple</span><span class="p">.</span><span class="nx">isTouch</span><span class="p">)</span> <span class="k">return</span> <span class="c1">// Add
+</span><span class="c1"></span>    <span class="p">}</span>
+    <span class="nx">value</span><span class="p">.</span><span class="nx">center</span> <span class="o">=</span> <span class="nx">element</span><span class="p">.</span><span class="nx">_ripple</span><span class="p">.</span><span class="nx">centered</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">_ripple</span><span class="p">.</span><span class="kr">class</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">value</span><span class="p">.</span><span class="kr">class</span> <span class="o">=</span> <span class="nx">element</span><span class="p">.</span><span class="nx">_ripple</span><span class="p">.</span><span class="kr">class</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">ripple</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">element</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>나같은 경우는 Ripple를 es5에서 땡겨오기 때문에 <code>node_modules/vuetify/es5/directives/ripple.js</code> 파일만 수정했다.</p>
+<p>vuetify가 다시 설치되면 또 똑같이 node_modules을 수정해야하는 번거로움이 있어 최선의 방법은 아니라고 생각한다..</p>
+<p>버전 올리는걸로 다시한번 생각해 봐야겠다..</p>
+<a class="post-dummy-target" id="참고-자료-"></a><h3>참고 자료</h3>
+<ul>
+<li><a href="https://github.com/vuetifyjs/vuetify/issues/7605">[Bug Report] Ripple effect happens twice in mobile browsers #7605</a></li>
+<li><a href="https://github.com/vuetifyjs/vuetify/commit/c8d2a675ea9c02f1c947b435f6aca0978c80e4b9">fix(Ripple): add ripple property to denote touch enabled</a></li>
+</ul>
+
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>%!(EXTRA string=2020-02-03)</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fminsoon.github.io%2f2020%2f02%2fvuetify-touch%2f&amp;text=%5bBugReport%5d%20Vuetify%20v-ripple%20%ec%a4%91%eb%b3%b5%20%ec%9d%b4%ec%8a%88&amp;via=" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fminsoon.github.io%2f2020%2f02%2fvuetify-touch%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+        <a href="//reddit.com/submit?url=https%3a%2f%2fminsoon.github.io%2f2020%2f02%2fvuetify-touch%2f&amp;title=%5bBugReport%5d%20Vuetify%20v-ripple%20%ec%a4%91%eb%b3%b5%20%ec%9d%b4%ec%8a%88" target="_blank" title="Share on Reddit">
+            <i class="fab fa-reddit fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://minsoon.github.io/tags/vue/"><i class="fas fa-tag fa-fw"></i>Vue</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://minsoon.github.io/tags/vuetifyjs/"><i class="fas fa-tag fa-fw"></i>VuetifyJs</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://minsoon.github.io/tags/v-ripple/"><i class="fas fa-tag fa-fw"></i>v-ripple</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();"></a></span>&nbsp;|&nbsp;<span><a href="https://minsoon.github.io/"></a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://minsoon.github.io/2020/01/vuetify2.x/" class="prev" rel="prev" title="Update Vuetify 1.5 -&gt; 2.x"><i class="fas fa-angle-left fa-fw"></i>Update Vuetify 1.5 -&gt; 2.x</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            
+
+            
+        </div>
+    </article></div>
+            </main>
+            
+            
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>
